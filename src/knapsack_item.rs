@@ -3,7 +3,6 @@ use std::fmt::Formatter;
 use std::fmt::Display;
 use std::fmt::Error;
 use std::str::FromStr;
-use std::cell::Cell;
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 pub struct KnapsackItem {
@@ -30,14 +29,6 @@ impl KnapsackItem {
 
     pub fn get_weight(&self) -> i32 {
         self.weight
-    }
-
-    pub fn get_ratio(&self) -> f64 {
-        (self.value as f64) / (self.weight as f64)
-    }
-
-    pub fn get_ratio_as_string(&self) -> String {
-        format!("{:.2}", self.get_ratio())
     }
 }
 

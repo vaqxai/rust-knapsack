@@ -1,9 +1,8 @@
 use clap::{Parser, Subcommand};
 
 mod knapsack_item;
-mod knapsack;
-use itertools::{Permutations, Itertools, Powerset};
-use std::{slice::Iter, iter::Filter};
+use itertools::{Itertools, Powerset};
+use std::slice::Iter;
 use knapsack_item::KnapsackItem;
 
 #[derive(Parser)]
@@ -96,7 +95,7 @@ fn main() {
             println!("Time taken: {:?}, with printing: {:?}", time_ended, time_begun.elapsed());
 
         },
-        Commands::FromFile { knapsack_size, filename } => {
+        Commands::FromFile { knapsack_size: _, filename: _ } => {
             panic!("Not implemented");
         },
     }
